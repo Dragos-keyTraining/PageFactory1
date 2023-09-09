@@ -1,0 +1,6 @@
+17:30:48.583 [main] INFO  utils.Log - Called method<click> on  
+17:30:52.673 [main] INFO  utils.Log - called method <sendKeys> on element <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" autocomplete="username" value="">
+17:30:52.673 [main] INFO  utils.Log - Called method <waitForElementToBeVisible> on locator :
+17:30:53.444 [main] INFO  utils.Log - called method <sendKeys> on element <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password">
+17:30:53.445 [main] INFO  utils.Log - Called method <waitForElementToBeVisible> on locator :
+17:30:53.933 [main] INFO  utils.Log - Called method<click> on  

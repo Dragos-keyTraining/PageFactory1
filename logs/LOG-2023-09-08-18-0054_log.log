@@ -1,0 +1,38 @@
+18:00:54.154 [main] INFO  utils.Log - ++++++++++++++++++++++++++++++++++++
+18:00:54.158 [main] INFO  utils.Log -  Started test case :login
+18:00:54.159 [main] INFO  utils.Log - Start time :2023.09.08.18.54
+18:00:54.159 [main] INFO  utils.Log - ++++++++++++++++++++++++++++++++++++
+18:00:54.167 [main] INFO  utils.Log - Called method<click> on  
+18:00:58.086 [main] INFO  utils.Log - called method <sendKeys> on element <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" autocomplete="username" value="">
+18:00:58.086 [main] INFO  utils.Log - Called method <waitForElementToBeVisible> on locator :
+18:00:58.853 [main] INFO  utils.Log - called method <sendKeys> on element <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password">
+18:00:58.853 [main] INFO  utils.Log - Called method <waitForElementToBeVisible> on locator :
+18:00:59.325 [main] INFO  utils.Log - Called method<click> on  
+18:01:01.991 [main] INFO  utils.Log - Called method<click> on  
+18:01:04.867 [main] INFO  utils.Log - ++++++++++++++++++++++++++++++++++++
+18:01:04.867 [main] INFO  utils.Log -  Passed test case :login
+18:01:04.867 [main] INFO  utils.Log - End time :2023.09.08.18.04
+18:01:04.868 [main] INFO  utils.Log - ++++++++++++++++++++++++++++++++++++
+18:01:19.757 [main] INFO  utils.Log - ++++++++++++++++++++++++++++++++++++
+18:01:19.757 [main] INFO  utils.Log -  Started test case :loginInvalid
+18:01:19.758 [main] INFO  utils.Log - Start time :2023.09.08.18.19
+18:01:19.758 [main] INFO  utils.Log - ++++++++++++++++++++++++++++++++++++
+18:01:19.760 [main] INFO  utils.Log - Called method<click> on  
+18:01:23.829 [main] INFO  utils.Log - called method <sendKeys> on element <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" autocomplete="username" value="">
+18:01:23.829 [main] INFO  utils.Log - Called method <waitForElementToBeVisible> on locator :
+18:01:24.584 [main] INFO  utils.Log - called method <sendKeys> on element <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password">
+18:01:24.584 [main] INFO  utils.Log - Called method <waitForElementToBeVisible> on locator :
+18:01:25.039 [main] INFO  utils.Log - Called method<click> on  
+18:01:37.428 [main] ERROR utils.Log - ++++++++++++++++++++++++++++++++++++
+18:01:37.428 [main] ERROR utils.Log -  Failed test case :loginInvalid
+18:01:37.428 [main] ERROR utils.Log - Fail time :2023.09.08.18.37
+18:01:37.434 [main] ERROR utils.Log - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"div[class='woocommerce-MyAccount-content']"}
+  (Session info: chrome=116.0.5845.179)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.4', java.version: '16.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [99f3ba9cdcd77e306a161bd5cebd5e29, findElement {using=css selector, value=div[class='woocommerce-MyAccount-content']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.179, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: /var/folders/r5/ws06c4s55zn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60749}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:60749/devtoo..., se:cdpVersion: 116.0.5845.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 99f3ba9cdcd77e306a161bd5cebd5e29
+18:01:37.434 [main] ERROR utils.Log - ++++++++++++++++++++++++++++++++++++
