@@ -4,3 +4,5 @@
 target/
 test-output/
 .DS_Store
+logs/
+screenshots/

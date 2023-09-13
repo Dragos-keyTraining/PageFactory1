@@ -6,9 +6,10 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import utils.BaseTest;
+import utils.ScreenShots;
 import utils.TestNgListener;
 
-@Listeners(TestNgListener.class)
+//@Listeners(TestNgListener.class)
 public class LoginTest  extends BaseTest{
 
 	@Test(priority = 1)
@@ -17,6 +18,7 @@ public class LoginTest  extends BaseTest{
 		app.click(app.menu.myAccountLink);
 		app.myAccount.loginInApp("customer", "customer@123");
 		assertTrue(app.checkElementIsDisplayed(app.myAccount.greetingsMessage));
+		ScreenShots.screenShot(driver);
 		app.click(app.myAccount.logOutButton);
 	}
 	
