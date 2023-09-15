@@ -15,20 +15,27 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import com.google.common.io.Files;
 
 import pages.BasePage;
 
-public class BaseTest {
+public class BaseTest extends Driver{
 	
 	public WebDriver driver;
 	public BasePage app;
 	
+	@Parameters({"browser"})
 	@BeforeClass()
-	public void setup() {
-		//System.setProperty("webdriver.chrome.driver", "path catre/chromedriver.exe")
-		driver = new ChromeDriver();
+	public void setup(String browser) {
+	//	System.setProperty("webdriver.chrome.driver", "path catre/chromedriver.exe")
+	//	System.setProperty("webdriver.edge.driver", "path catre/chromedriver.exe")
+	//	System.setProperty("webdriver.gecko.driver", "path catre/chromedriver.exe")
+
+		//driver = new ChromeDriver();
+		
+		driver = initDriver(browser);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();//maximizeaza fereastra browserului
 		driver.get("https://keyfood.ro/");

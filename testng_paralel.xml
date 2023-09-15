@@ -4,9 +4,16 @@
 		<listener class-name= "utils.TestNgListener" />
 	</listeners>
 
-	<parameter name = "browser" value="chrome" />
 
-    <test name="Login" >
+    <test name="chrome 2" >
+    	<parameter name = "browser" value="chrome" />
+    
+        <classes>
+            <class name="tests.LoginTest" ></class>
+        </classes>
+    </test>
+        <test name="Chrome" >
+    	<parameter name = "browser" value="chrome" />
     
         <classes>
             <class name="tests.LoginTest" ></class>

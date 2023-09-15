@@ -4,20 +4,24 @@
   <artifactId>PageFactory</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
-  
+  <properties>
+     <maven.compiler.source>1.8</maven.compiler.source>
+     <maven.compiler.target>1.8</maven.compiler.target>
+ </properties>
+ 
   <dependencies>
   <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 	<dependency>
 	    <groupId>org.seleniumhq.selenium</groupId>
 	    <artifactId>selenium-java</artifactId>
-	    <version>4.11.0</version>
+	    <version>4.12.0</version>
 	</dependency>
 	  <!-- https://mvnrepository.com/artifact/org.testng/testng -->
 	<dependency>
 	    <groupId>org.testng</groupId>
 	    <artifactId>testng</artifactId>
 	    <version>7.8.0</version>
-	    <scope>test</scope>
+	    <scope>compile</scope>
 	</dependency>
   	<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
 	<dependency>
@@ -25,8 +29,37 @@
 	    <artifactId>log4j-core</artifactId>
 	    <version>2.20.0</version>
 	</dependency>
-  
-  
+    
   </dependencies>
+  <profiles>
+  <profile>
+    <id>doclint-java8-disable</id>
+    <activation>
+      <jdk>[1.8,)</jdk>
+    </activation>
+
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+    <configuration>
+                    <doclint>none</doclint>
+             </configuration>
+        </plugin>
+     <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M7</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>${suiteXML}</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+      </plugins>
+    </build>
+  </profile>
+</profiles>
   
 </project>
