@@ -1,5 +1,8 @@
 package utils;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -8,6 +11,7 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class Driver {
 	
@@ -15,11 +19,16 @@ public class Driver {
 	public static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 	//public WebDriver driver;
 	
-	public WebDriver initDriver(String browser) {
+	public static WebDriver initDriver(String browser) throws MalformedURLException {
+		RemoteWebDriver rwd;
 		
 		if(browser.equalsIgnoreCase("chrome")) {
 			
-			driver.set(new ChromeDriver(getChromeOptions()));
+			//driver.set(new ChromeDriver(getChromeOptions()));
+			
+			//setup pentru selenium grid
+			rwd = new RemoteWebDriver(new URL("http://localhost:4444"), getChromeOptions());
+			driver.set(rwd);
 			
 			long chromeId = Thread.currentThread().getId();
 			Log.info("Chrome --> Thread id : " + chromeId);
@@ -37,7 +46,12 @@ public class Driver {
 			
 		} else if(browser.equalsIgnoreCase("firefox")) {
 			
-			driver.set(new FirefoxDriver(getFirefoxOptions()));
+			//driver.set(new FirefoxDriver(getFirefoxOptions()));
+			
+			//setup pentru selenium grid
+			rwd = new RemoteWebDriver(new URL("http://localhost:4444"), getFirefoxOptions());
+			driver.set(rwd);
+			
 			
 			long firefoxID = Thread.currentThread().getId();
 			Log.info("Firefox --> Thread id : " + firefoxID);
